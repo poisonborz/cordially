@@ -1,5 +1,5 @@
 
-# Cordially
+# <img src="https://raw.githubusercontent.com/poisonborz/cordially/main/src/web/admin/assets/logo.svg" alt="Cordially" width="300">
 
 A straightforward web-based single-event invitation/RSVP management system.
 Intended for personal occassions like parties and weddings (it was used for mine!).
@@ -21,11 +21,19 @@ At the moment the intended use cases is a predefined list of guests and RSVP pro
 
 Sample images to showcase the workflow:
 
-<img align="left" src="https://i.imgur.com/LWuQEFy.jpg" width="200" style="margin: 10px">
-<img align="left" src="https://i.imgur.com/33fqVen.jpg" width="200" style="margin: 10px">
-<img align="left" src="https://i.imgur.com/RVXvt0e.jpg" width="200" style="margin: 10px">
-
-<br style="clear: both">
+<table>
+  <tr>
+    <td>
+      <img align="left" src="https://i.imgur.com/LWuQEFy.jpg" width="250" style="margin: 10px">
+    </td>
+    <td>
+      <img align="left" src="https://i.imgur.com/33fqVen.jpg" width="250" style="margin: 10px">
+    </td>
+    <td>
+      <img align="left" src="https://i.imgur.com/RVXvt0e.jpg" width="250" style="margin: 10px">
+    </td>
+   </tr>
+</table>
 
 #### Roadmap
 
