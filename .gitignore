@@ -1,0 +1,14 @@
+.idea
+node_modules/
+npm-debug.log*
+.env
+schema.graphql
+.DS_Store
+.htaccess
+package-lock.json
+database/db.sqlite
+transient
+.vscode/*
+public/*
+!public/.keep
+*.code-workspace

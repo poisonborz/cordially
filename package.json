@@ -1,0 +1,72 @@
+{
+  "name": "cordially",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "A straightforward single-event rsvp manager",
+  "main": "src/index.ts",
+  "typings": "src/index.ts",
+  "scripts": {
+    "start": "link-module-alias && node --require ts-node/register src/index.ts",
+    "dev": "link-module-alias && nodemon --exec node --inspect=0.0.0.0:9229 --require ts-node/register src/index.ts",
+    "guestdev": "snowpack dev",
+    "guestbuild": "snowpack build",
+    "admindev": "vite",
+    "adminbuild": "vite build --emptyOutDir",
+    "init": "npx ts-node src/init.ts",
+    "test": "jest",
+    "preinstall": "node -e throw new Error('TEMP ERROR') \""
+  },
+  "author": "poisonborz",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poisonborz/cordially.git"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "public/*"
+    ]
+  },
+  "_moduleAliases": {
+    "~": "src"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-sass": "^1.4.0",
+    "@types/bcryptjs": "^2.4.2",
+    "link-module-alias": "^1.2.0",
+    "snowpack": "^3.6.1"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.5",
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "@vitejs/plugin-react": "^1.2.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.30.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "express": "^4.17.1",
+    "framer-motion": "^6.2.8",
+    "hashids": "^2.2.8",
+    "helmet": "^4.6.0",
+    "http2-proxy": "^5.0.53",
+    "normalizecss": "^3.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.27.1",
+    "react-i18nify": "^4.4.1",
+    "sequelize": "^6.7.0",
+    "sqlite3": "^5.0.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5",
+    "vite": "^2.8.5"
+  }
+}

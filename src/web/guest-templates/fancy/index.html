@@ -1,0 +1,339 @@
+
+<!DOCTYPE html><html lang=en><head><meta charset="UTF-8">
+    <title data-lang-hu="" data-lang-de=""></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@500;600;800&family=Kaushan+Script&display=swap" rel="stylesheet">
+    <style>#loading {width:100vw;height:100vh;position:fixed;top:0;left:0;display:flex;align-items:center;justify-content:center;background:#ff6bc2;}</style>
+</head>
+
+<body @mounted="mounted" class="unopened">
+
+<div id="error" v-if="loadError">
+    Hey
+    <b>💔</b>
+    <p
+        data-lang-en="sadly it doesn't work this way"
+        data-lang-de="leider funktioniert das so nicht"
+        data-lang-fr="malheureusement ça ne marche pas comme ça"
+        data-lang-es="lamentablemente no funciona de esta manera"></p>
+</div>
+
+<div id="card" v-if="!loadError">
+    <div class="card" id="cardLeft">
+        <div class="cardWrap" id="cardWrapLeft">
+            <img class="cardOrnament cardOrnamentLeft" src="images/card_ornament_left.webp" alt=""/>
+            <p class="cardText cardTextLeft">
+            </p>
+            <img class="cardSeal" id="cardLeftSeal" @click="openSeal" src="images/card_seal_left.webp" alt="">
+        </div>
+    </div>
+    <div class="card" id="cardRight">
+        <div class="cardWrap" id="cardWrapRight">
+            <img class="cardOrnament cardOrnamentRight" src="images/card_ornament_right.webp" alt=""/>
+            <p class="cardText cardTextRight">
+            </p>
+            <img class="cardSeal" id="cardRightSeal" @click="openSeal" src="images/card_seal_right.webp" alt="">
+        </div>
+    </div>
+</div>
+
+<section id="addressing" v-show="loaded && !loadError" class="pink" style="visibility: hidden">
+    <div id="addressingAccessoriesWrap">
+        <div id="addressingAccessories">
+            <img class="sparkle" id="addressingAccessories_sparkle1" src="images/pink_sparkle.webp" alt="">
+            <img class="sparkle" id="addressingAccessories_sparkle2" src="images/pink_sparkle.webp" alt="">
+            <img class="sparkle" id="addressingAccessories_sparkle3" src="images/pink_sparkle.webp" alt="">
+            <img class="sparkle" id="addressingAccessories_sparkle4" src="images/pink_sparkle.webp" alt="">
+            <img class="sparkle" id="addressingAccessories_sparkle5" src="images/pink_sparkle.webp" alt="">
+            <img class="sparkle" id="addressingAccessories_sparkle6" src="images/pink_sparkle.webp" alt="">
+            <img class="sparkle" id="addressingAccessories_sparkle7" src="images/pink_sparkle.webp" alt="">
+            <div id="addressingAccessories_highlight">
+                <img id="addressingAccessories_highlight1" src="images/pink_accessory_highlight.svg" alt="">
+                <img id="addressingAccessories_highlight2" src="images/pink_accessory_highlight.svg" alt="">
+            </div>
+            <img id="addressingAccessories_hearts" class="jingle" data-rellax-speed="1" src="images/pink_accessory_hearts.webp" alt="">
+            <img id="addressingAccessories_gems" class="jingle" data-rellax-speed="3" src="images/pink_accessory_gems.webp" alt="">
+            <img id="addressingAccessories_faces" src="images/pink_accessory_faces.webp" alt="">
+        </div>
+    </div>
+    </div>
+
+    <div class="gyroLayer" data-depth=".3" style="z-index: 0">
+        <div class="jingles"  data-relative-input="true" id="addressingJingles">
+            <img class="jingle jingleLocal" data-rellax-speed="3" id="addressingJingles_35" style="width: 350px;" src="images/pink_shape_dots.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="4" id="addressingJingles_36" style="width: 350px; transform: rotate(45deg)" src="images/pink_shape_dots.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="2" id="addressingJingles_1" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-4" id="addressingJingles_2" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="2" id="addressingJingles_3" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_4" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="4" id="addressingJingles_5" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="2" id="addressingJingles_6" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-3" id="addressingJingles_7" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-2" id="addressingJingles_8" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="4" id="addressingJingles_9" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-5" id="addressingJingles_10" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-3" id="addressingJingles_11" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-4" id="addressingJingles_12" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-7" id="addressingJingles_13" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="3" id="addressingJingles_14" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_15" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="3" id="addressingJingles_16" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_17" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_18" style="width: 67px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="4" id="addressingJingles_19" style="width: 67px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-5" id="addressingJingles_20" style="width: 67px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="7" id="addressingJingles_21" style="width: 118px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-1" id="addressingJingles_22" style="width: 34px" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="2" id="addressingJingles_23" style="width: 34px" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_24" style="width: 34px; transform: rotate(45deg)" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="3" id="addressingJingles_25" style="width: 40px; transform: rotate(45deg)" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-2" id="addressingJingles_26" style="width: 45px;" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-3" id="addressingJingles_27" style="width: 73px; transform: rotate(45deg)" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="2" id="addressingJingles_28" style="width: 58px" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_29" style="width: 34px" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="3" id="addressingJingles_30" style="width: 70px;" src="images/pink_shape_triangle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-2" id="addressingJingles_31" style="width: 70px; transform: rotate(270deg)" src="images/pink_shape_triangle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="2" id="addressingJingles_32" style="width: 44px; transform: rotate(180deg)" src="images/pink_shape_triangle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-1" id="addressingJingles_33" style="width: 44px; transform: rotate(180deg)" src="images/pink_shape_triangle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="-5" id="addressingJingles_34" style="width: 50px; transform: rotate(270deg)" src="images/pink_shape_triangle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_37" style="width: 39px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_38" style="width: 34px; transform: rotate(45deg)" src="images/pink_shape_square.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="7" id="addressingJingles_39" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="2" id="addressingJingles_40" style="width: 70px;" src="images/pink_shape_triangle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="1" id="addressingJingles_41" style="width: 44px; transform: rotate(180deg)" src="images/pink_shape_triangle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="3" id="addressingJingles_42" style="width: 23px" src="images/pink_shape_circle.svg" alt="">
+            <img class="jingle jingleLocal" data-rellax-speed="4" id="addressingJingles_43" style="width: 34px; transform: rotate(45deg)" src="images/pink_shape_square.svg" alt="">
+        </div>
+    </div>
+
+    <div class="waves"></div>
+
+</section>
+
+
+<section id="location" v-show="loaded && !loadError" class="yellow" style="visibility: hidden">
+</section>
+
+<section id="options" v-show="loaded && !loadError" class="green" style="visibility: hidden">
+</section>
+
+
+<script type="module" src="scripts/main.js"></script>
+<script src="scripts/rellax.js"></script>
+<script src="scripts/confetti.js"></script>
+<script src="scripts/gyro.js"></script>
+<script type="module">
+
+    import { createApp } from 'https://unpkg.com/petite-vue@0.2.2/dist/petite-vue.es.js'
+    import ky from 'https://unpkg.com/ky@0.28.7/distribution/index.js'
+    import { switchLanguage } from './scripts/main'
+    import { rainoftears } from './scripts/rainoftears'
+
+    const magic = (new URLSearchParams(window.location.search)).get('magic')
+    const music = document.getElementById('music')
+
+    if(!/Android|webOS|iPhone|iPad|Opera Mini/i.test(navigator.userAgent) ) {
+        new Rellax('.jingleLocal')
+        new Rellax('.jingleCentered', { center: true })
+    } else {
+        if (window.DeviceOrientationEvent && 'ontouchstart' in window) {
+            new CursorParallax( document.querySelector('#addressing'), {
+                easing: 'ease-out',
+                duration: '.3s',
+                mousemoveRatio: 0.5,
+                deviceorientationRatio: 1,
+                mousemove: false,
+                deviceorientation: true,
+                isUsedTheFirstTilt: true
+            })
+        }
+    }
+
+
+    createApp({
+        guest: null,
+        loading: true,
+        loaded: false,
+        loadError: null,
+        isValid: true,
+        formNotDirty: false,
+        posting: false,
+        lastPostSuccess: null,
+        async mounted() {
+            let initReply
+
+            await Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve })))
+
+            const fail = () => {
+                this.display(true)
+                switchLanguage()
+            }
+
+            if (!magic) {
+                fail()
+            } else {
+                initReply = await ky.get('/guest',{ searchParams: { magic } }).json().catch(e => console.log('Server error: ' + e))
+
+                ;[...(document.getElementsByTagName('section'))].forEach(section => {
+                    section.style.visibility = 'visible'
+                })
+            }
+
+            if (!initReply || initReply.status === 400) {
+                fail()
+            } else {
+                this.guest = initReply
+                switchLanguage(this.guest.name ? this.guest.languageKey : null)
+                this.formNotDirty = Boolean(this.guest.lastUpdatedByGuestTime)
+                this.display(!Boolean(this.guest.name))
+
+                this.musicSetTrack(this.defaultMusicTrack, 0.02)
+                this.musicPrepToPlay()
+            }
+        },
+
+        // methods
+        getValue(key, specialProp) {
+            return (this.guest?.properties?.find(p => p.key === key) || {})[specialProp || 'value']
+        },
+        setValue(e, key, presetValue) {
+
+            let interpretedValue
+
+            if (presetValue === undefined) {
+                switch (e.target.type) {
+                    case 'radio':
+                    case 'checkbox':
+                        interpretedValue = e.target.checked ? '1' : '0'
+                        break
+                    case 'select-one':
+                    case 'input':
+                    case 'textarea':
+                        interpretedValue = e.target.value
+                }
+            }
+
+            if (presetValue !== undefined || interpretedValue !== undefined) {
+                const item = (this.guest?.properties.find(p => p.key === key))
+                const value = presetValue || interpretedValue
+                if (item) {
+                    item.value = value
+                } else {
+                    this.guest.properties.push({ key, value })
+                }
+            }
+
+            this.formNotDirty = false
+            this.validate()
+        },
+        openSeal() {
+            [...(document.getElementsByClassName('card'))].forEach(card => {
+                card.classList.toggle('open')
+            })
+
+            document.body.classList.remove('unopened')
+
+            this.toggleMusic()
+
+            setTimeout(() => {
+                document.getElementById('card').remove()
+            },2100)
+        },
+        musicSetTrack(track, volume) {
+            music.setAttribute('src', document.getElementById(track).getAttribute('src'))
+            music.load()
+            music.volume = volume;
+            if (music.paused) music.play()
+        },
+        musicPrepToPlay() {
+            music.load()
+            music.addEventListener('ended', () => {
+                music.currentTime = 0
+                music.play()
+            }, false);
+
+        },
+        toggleMusic() {
+            music.paused ? music.play() : music.pause()
+            this.musicIsPaused = music.paused
+        },
+        validate () {
+            // TODO required field validation goes here
+            this.isValid = true
+        },
+        display(error) {
+            this.loading = false
+
+            if (error) {
+                this.loadError = true
+            }
+
+            this.loaded = true
+        },
+        async post() {
+            this.posting = true
+            const adminProps = ['minimumIntValue', 'maximumIntValue', 'required']
+            const sanitizedProps = JSON.stringify(JSON.parse(JSON.stringify(this.guest.properties)).map(p => {
+                adminProps.forEach(ap => {
+                    if (p[ap] !== undefined) delete p[ap]
+                })
+
+                return p
+            }))
+
+            const postReply = await ky.put('/guest', {
+                searchParams: {
+                    ...this.guest,
+                    properties: sanitizedProps,
+                    magic
+                }
+            }).json()
+
+            this.formNotDirty = true
+            this.lastPostSuccess = !postReply.status
+            this.posting = false
+
+            if (this.lastPostSuccess) {
+
+                if (this.getValue('attendance') === '1') {
+                    startConfetti()
+                    setTimeout(stopConfetti,1500)
+                }
+
+                if (this.getValue('attendance') === '0') {
+                    rainoftears()
+                }
+            }
+        },
+        submitEnabled () {
+            return this.isValid && (this.lastPostSuccess === false || !this.formNotDirty)
+        },
+        submitText() {
+            return document.getElementById((() => {
+                if (this.posting) {
+                    return 'submitSaving'
+                }
+
+                if (this.lastPostSuccess === null && this.guest?.lastUpdatedByGuestTime && this.formNotDirty) {
+                    return 'submitUnchanged'
+                }
+
+                if (this.lastPostSuccess && this.formNotDirty) {
+                    return 'submitSaved'
+                }
+
+                if (!this.formNotDirty) {
+                    return 'submitSave'
+                }
+            })()).innerHTML
+        }
+    }).mount()
+
+</script>
+
+
+</body>
+</html>
