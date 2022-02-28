@@ -24,13 +24,13 @@ Sample images to showcase the workflow:
 <table>
   <tr>
     <td>
-      <img align="left" src="https://i.imgur.com/LWuQEFy.jpg" width="250" style="margin: 10px">
+      <img align="left" src="https://i.imgur.com/LWuQEFy.jpg" width="240" style="margin: 10px">
     </td>
     <td>
-      <img align="left" src="https://i.imgur.com/33fqVen.jpg" width="250" style="margin: 10px">
+      <img align="left" src="https://i.imgur.com/33fqVen.jpg" width="240" style="margin: 10px">
     </td>
     <td>
-      <img align="left" src="https://i.imgur.com/RVXvt0e.jpg" width="250" style="margin: 10px">
+      <img align="left" src="https://i.imgur.com/RVXvt0e.jpg" width="240" style="margin: 10px">
     </td>
    </tr>
 </table>
