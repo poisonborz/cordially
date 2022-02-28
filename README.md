@@ -60,8 +60,3 @@ You only need `node` 16+ and an `npm i` to install dependencies.
 
 Execute `npx init` to set up the database, and create the default admin user.
 
-// TODO
-
-### Usage
-
-// TODO
